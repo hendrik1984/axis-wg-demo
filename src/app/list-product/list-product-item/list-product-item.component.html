@@ -1,13 +1,13 @@
 <div class="col-md-6" style="border: solid 1px black; margin: 5px;">
-    <h4 class="list-group-item-heading">{{ productPulsa.name }}</h4>
-    <p class="list-group-item-text">{{ productPulsa.amount }}</p>
-    <p class="list-group-item-text">{{ productPulsa.description }}</p>
-    <p class="pull-right">
-        <a
-            href="#"
-            style="cursor: pointer;"
-            routerLink="/quick_checkout/pulsa"
-            [queryParams]="{msisdn: msisdn, product_id: productPulsa.id, email: email, returnUrl: ''}"
-        >Beli</a>
-    </p>
+        <h4 class="list-group-item-heading" style="margin-bottom: 5px;">{{ productPulsa.name }}</h4>
+        <p class="list-group-item-text">Harga Rp {{ productPulsa.amount }}</p>
+        <p class="list-group-item-text">{{ productPulsa.description }}</p>
+        <p class="list-group-item-text">
+            <a
+                href="#"
+                style="cursor: pointer;"
+                routerLink="/quick_checkout/pulsa"
+                [queryParams]="{msisdn: msisdn, product_id: +productPulsa.id, email: email, returnUrl: ''}"
+            >Beli</a>
+        </p>
 </div>

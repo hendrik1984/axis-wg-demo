@@ -8,6 +8,7 @@ import { ProductPulsaService } from './quick-checkout/ProductPulsa.service';
 import { ListProductComponent } from './list-product/list-product.component';
 import { ListProductItemComponent } from './list-product/list-product-item/list-product-item.component';
 import { FormsModule } from '@angular/forms';
+import { ValidatorMsisdnService } from './quick-checkout/ValidatorMsisdn.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ProductPulsaService],
+  providers: [ProductPulsaService, ValidatorMsisdnService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

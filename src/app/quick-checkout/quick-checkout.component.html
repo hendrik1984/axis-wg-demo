@@ -1,1 +1,65 @@
-<p>quick-checkout works!</p>
+<div *ngIf="!doTransaction" class="alert alert-warning" role="alert" style="margin-top: 25px; text-align: center;">
+    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color: red;"></span>
+    {{ errorMessage }}
+</div>
+
+<div *ngIf="doTransaction" class="col-md-12" style="padding-top: 25px">
+    <div class="row" style="background-color: #AF69EF; color: white;">
+        <h3 style="padding-left: 25px; padding-bottom: 10px;">Checkout</h3>
+    </div>
+
+    <div class="row" style="height: 500px; border: 1px solid black; border-bottom: none;">
+        <div class="col-md-6">
+            <div class="row" style="padding-left: 25px; padding-top: 25px; font-size: large;">
+                <table style="letter-spacing: 3px;">
+                    <tr>
+                        <td>
+                            <h2>Pulsa</h2>
+                        </td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Jenis Layanan
+                        </td>
+                        <td style="padding-left: 5px;">:</td>
+                        <td style="padding-left: 5px;">
+                            {{ productPulsaView.name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nomor
+                        </td>
+                        <td style="padding-left: 5px;"> : </td>
+                        <td style="padding-left: 5px;">
+                            {{ productPulsaView.msisdn }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Harga
+                        </td>
+                        <td style="padding-left: 5px;"> : </td>
+                        <td style="padding-left: 5px;">
+                            Rp. {{ productPulsaView.amount | number }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="border: 1px solid black; border-top: none; padding-bottom: 10px;">
+        <div class="col-md-4" style="letter-spacing: 2px; padding-left: 25px;">
+            <h4>Total Pembayaran</h4>
+            <p style="color: orange;">Rp. {{ productPulsaView.amount | number }}</p>
+        </div>
+        <div class="col-md-2 pull-right">
+            <button class="btn btn-lg btn-warning btn-block">Bayar</button>
+        </div>
+    </div>
+
+</div>

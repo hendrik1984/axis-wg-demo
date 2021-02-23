@@ -1,0 +1,33 @@
+<div class="row">
+    <h4>Axis WG Isi Pulsa {{msisdn}}</h4>
+</div>
+
+<div class="row">
+    <label for="msisdn">Msisdn</label>
+    <input
+        type="text"
+        style="margin-left: 5px;"
+        placeholder="eg. 0838111222"
+        [(ngModel)]="msisdn"
+    >
+</div>
+
+<div class="row">
+    <label for="email">Email</label>
+    <input
+        type="text"
+        style="margin-left: 5px;"
+        placeholder="eg. abc@gmail.com"
+        [(ngModel)]="email"
+    >
+</div>
+
+<div class="row">
+    <app-list-product-item
+        *ngFor="let pulsaEl of listProductPulsas; let i = index"
+        [productPulsa]="pulsaEl"
+        [index]="i"
+        [msisdn]="msisdn"
+        [email]="email"
+    ></app-list-product-item>
+</div>
